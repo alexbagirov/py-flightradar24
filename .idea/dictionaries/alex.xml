@@ -2,6 +2,8 @@
   <dictionary name="alex">
     <words>
       <w>adsb</w>
+      <w>aircrafts</w>
+      <w>bagirov</w>
       <w>callsign</w>
       <w>checkins</w>
       <w>fcgi</w>
@@ -11,6 +13,7 @@
       <w>khtml</w>
       <w>maxage</w>
       <w>mlat</w>
+      <w>sheremetyevo</w>
       <w>waypoint</w>
       <w>waypoints</w>
     </words>
