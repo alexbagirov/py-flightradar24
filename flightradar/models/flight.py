@@ -12,9 +12,11 @@ FLIGHT_STRING = ('Flight {flight} from {origin} to {destination}. '
 
 class BriefFlight:
     """Class for storing info for all flights on the map."""
-    def __init__(self, flight_id, mode_s, lat, lon, track, alt, speed, squawk,
-                 radar, model, registration, undefined, origin, destination,
-                 iata, undefined2, vertical_speed, icao, undefined3, airline):
+    def __init__(self, flight_id, lat, lon, model, registration, origin,
+                 destination, iata, icao, airline, mode_s=None, track=None,
+                 alt=None, speed=None, squawk=None, radar=None,
+                 vertical_speed=None, undefined=None, undefined2=None,
+                 undefined3=None):
         self.id = flight_id
         self.mode_s = mode_s
         self.lat = lat
@@ -50,6 +52,16 @@ class BriefFlight:
     def create(flight_id: str, data: list):
         """Static method for Flight instance creation."""
         return BriefFlight(flight_id=flight_id, **dict(zip(FIELDS, data)))
+
+    @staticmethod
+    def create_from_search(id: str, detail: dict, **_):
+        """Static method for Flight instance creation from search results."""
+        return BriefFlight(flight_id=id, lat=detail['lat'], lon=detail['lon'],
+                           origin=detail['schd_from'],
+                           destination=detail['schd_to'],
+                           model=detail['ac_type'], registration=detail['reg'],
+                           icao=detail['callsign'], iata=detail['flight'],
+                           airline=detail['operator'])
 
 
 class DetailedFlight:
