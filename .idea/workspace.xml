@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77ec464e-22ff-47b3-baf2-74fc4faa950d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/flightradar/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/flightradar/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +13,8 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/py_flightradar24$api.coverage" NAME="api Coverage Results" MODIFIED="1536602357971" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flightradar" />
+    <SUITE FILE_PATH="coverage/py_flightradar24$pytest_for_test_api_TestApi.coverage" NAME="pytest for test_api.TestApi Coverage Results" MODIFIED="1536660824073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/py_flightradar24$api.coverage" NAME="api Coverage Results" MODIFIED="1536660698587" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flightradar" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="1478541705">
@@ -20,18 +23,18 @@
           <entry key="project.closed" value="4" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.28" value="2" />
-          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.29" value="1" />
           <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="2464" />
+          <entry key="py" value="3181" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="2464" />
+          <entry key="Python" value="3181" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -51,8 +54,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/flightradar/models/flight.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="-1618">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/test_api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+                <marker date="1536660823975" expanded="true" signature="388:419" ph="..." />
+                <marker date="1536660823975" expanded="true" signature="496:501" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -60,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/flightradar/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="74" column="15" lean-forward="true" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
+            <state relative-caret-position="474">
+              <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -98,6 +115,7 @@
         <option value="$PROJECT_DIR$/flightradar/models/flight.py" />
         <option value="$PROJECT_DIR$/flightradar/models/airport.py" />
         <option value="$PROJECT_DIR$/flightradar/models/operator.py" />
+        <option value="$PROJECT_DIR$/tests/test_api.py" />
         <option value="$PROJECT_DIR$/flightradar/api.py" />
       </list>
     </option>
@@ -129,17 +147,6 @@
               <item name="py-flightradar24" type="b2602c69:ProjectViewProjectNode" />
               <item name="py-flightradar24" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="py-flightradar24" type="b2602c69:ProjectViewProjectNode" />
-              <item name="py-flightradar24" type="462c0819:PsiDirectoryNode" />
-              <item name="flightradar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="py-flightradar24" type="b2602c69:ProjectViewProjectNode" />
-              <item name="py-flightradar24" type="462c0819:PsiDirectoryNode" />
-              <item name="flightradar" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -170,7 +177,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.pytest for test_api.TestApi">
     <configuration name="api" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="py-flightradar24" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -193,8 +200,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for test_api.TestApi" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="py-flightradar24" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_api.TestApi&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.api" />
+      <item itemvalue="Python tests.pytest for test_api.TestApi" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest for test_api.TestApi" />
         <item itemvalue="Python.api" />
       </list>
     </recent_temporary>
@@ -212,23 +240,55 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 00m 10s.xml">
+      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 00m 25s.xml">
+      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 01m 30s.xml">
+      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 01m 52s.xml">
+      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 02m 52s.xml">
+      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 04m 56s.xml">
+      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 04m 58s.xml">
+      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 11m 45s.xml">
+      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 13m 05s.xml">
+      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 13m 44s.xml">
+      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
+    </history-entry>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="27" width="1307" height="741" extended-state="6" />
+    <frame x="59" y="35" width="1861" height="1045" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2775575" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27676097" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879817" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3129139" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39900663" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31405896" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997722" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4997227" weight="0.32915717" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4997227" weight="0.32879817" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50027734" side_tool="true" weight="0.32915717" />
       <window_info anchor="bottom" id="Version Control" order="11" />
       <window_info anchor="bottom" id="Python Console" order="12" />
@@ -268,17 +328,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/flightradar/api.py</url>
-          <line>74</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/flightradar/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -292,38 +341,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flightradar/coordinates.py">
+    <entry file="file://$PROJECT_DIR$/flightradar/models/airport.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        <state relative-caret-position="368">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding>
+            <marker date="1536571346023" expanded="true" signature="110:115" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flightradar/models/operator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="24" lean-forward="true" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="276">
+          <caret line="12" column="26" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flightradar/models/airport.py">
+    <entry file="file://$PROJECT_DIR$/flightradar/coordinates.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        <state relative-caret-position="621">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flightradar/models/flight.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="-1618">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+            <marker date="1536660823975" expanded="true" signature="388:419" ph="..." />
+            <marker date="1536660823975" expanded="true" signature="496:501" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/flightradar/api.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="74" column="15" lean-forward="true" selection-start-line="74" selection-start-column="15" selection-end-line="74" selection-end-column="15" />
+        <state relative-caret-position="474">
+          <caret line="43" column="8" selection-start-line="43" selection-start-column="8" selection-end-line="43" selection-end-column="8" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

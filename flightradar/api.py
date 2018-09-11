@@ -29,9 +29,9 @@ class API:
     """Main API class for FlightRadar24 interaction."""
     def __init__(self):
         self.logger = logging.getLogger('API')
-        self.logger.setLevel(logging.INFO)
+        self.logger.setLevel(logging.ERROR)
         log_handler = logging.StreamHandler()
-        log_handler.setLevel(logging.INFO)
+        log_handler.setLevel(logging.ERROR)
         log_fmt = logging.Formatter('[{name}]: {message}\n', style='{')
         log_handler.setFormatter(log_fmt)
         self.logger.addHandler(log_handler)

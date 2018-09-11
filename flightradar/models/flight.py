@@ -94,7 +94,8 @@ class DetailedFlight:
         return DetailedFlight(flight_id=data['identification']['id'],
                               flight=data['identification']['callsign'],
                               status=data['status']['text'],
-                              model=data['aircraft']['model']['code'],
+                              model=data['aircraft']['model']['code'] if
+                              data['aircraft']['model']['code'] else None,
                               registration=data['aircraft']['registration'],
                               airline=data['airline']['name'],
                               origin=data['airport']['origin']['name'],
