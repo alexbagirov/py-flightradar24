@@ -1,8 +1,12 @@
+import os
+import sys
 from time import sleep
 import unittest
 
-from flightradar.api import API, BriefFlight, DetailedFlight
-from flightradar.coordinates import Area
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             os.path.pardir))
+
+from api import API, Area, BriefFlight, DetailedFlight
 
 
 class TestApi(unittest.TestCase):
