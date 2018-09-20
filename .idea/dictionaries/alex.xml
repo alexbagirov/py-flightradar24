@@ -8,11 +8,15 @@
       <w>checkins</w>
       <w>fcgi</w>
       <w>flarm</w>
+      <w>flightradar</w>
       <w>iata</w>
       <w>icao</w>
       <w>khtml</w>
       <w>maxage</w>
       <w>mlat</w>
+      <w>qtwebchannel</w>
+      <w>qwebchannel</w>
+      <w>schd</w>
       <w>sheremetyevo</w>
       <w>waypoint</w>
       <w>waypoints</w>

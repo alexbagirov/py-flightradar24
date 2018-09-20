@@ -2,10 +2,11 @@ import json
 import logging
 from urllib.request import urlopen, Request
 
-from coordinates import Area
-from models.airport import Airport
-from models.flight import BriefFlight, DetailedFlight
-from models.operator import Operator
+from flightradar.coordinates import Area
+from flightradar.models.airport import Airport
+from flightradar.models.flight import (BriefFlight, DetailedFlight,
+                                       flights_to_json)
+from flightradar.models.operator import Operator
 
 FLIGHTS_API_PATTERN = ('https://data-live.flightradar24.com/zones'
                        '/fcgi/feed.js?bounds={},{},{},{}'
@@ -41,14 +42,17 @@ class API:
         self.logger.info('Getting flights in [{}]'.format(area))
         req = Request(FLIGHTS_API_PATTERN.format(*area),
                       headers=HEADERS)
-        return self.parse_flights(json.loads(urlopen(req).read().decode()))
+        return flights_to_json(self.parse_flights(
+            json.loads(urlopen(req).read().decode())))
 
     @staticmethod
     def parse_flights(data: dict):
         """Finds all flights in the response and builds their instances."""
+        result = []
         for key in data:
             if type(data[key]) == list:
-                yield BriefFlight.create(key, data[key])
+                result.append(BriefFlight.create(key, data[key]))
+        return result
 
     def get_flight(self, flight_id: str) -> DetailedFlight:
         """Gets more detailed info about the specified flight."""
@@ -69,13 +73,3 @@ class API:
                 for result in self.get_search_results(query, limit)
                 if result['type'] != 'schedule'
                 and result['type'] != 'aircraft')
-
-
-if __name__ == '__main__':
-    api = API()
-    # для работы get_flight необходимо указать активный flight id
-    print(api.get_flight('1dd13740'))
-    for flight in api.get_area(Area(57.06, 55.00, 32.97, 36.46)):
-        print(flight)
-    for i in api.search('AFL'):
-        print(i)

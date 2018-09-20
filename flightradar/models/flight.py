@@ -1,4 +1,7 @@
-from coordinates import Waypoint
+import json
+from typing import List
+
+from flightradar.coordinates import Waypoint
 
 
 FIELDS = ['mode_s', 'lat', 'lon', 'track', 'alt', 'speed',
@@ -8,6 +11,10 @@ FIELDS = ['mode_s', 'lat', 'lon', 'track', 'alt', 'speed',
 FLIGHT_STRING = ('Flight {flight} from {origin} to {destination}. '
                  '{model} ({registration}) at {lat}, {lon} on altitude {alt}. '
                  'Speed: {speed}. Track: {track}.')
+TRACKS = {0: '1', 15: '2', 30: '3', 45: '4', 60: '5', 75: '6', 90: '7',
+          105: '8', 120: '9', 135: '10', 150: '11', 165: '12', 180: '13',
+          195: '14', 210: '15', 225: '16', 240: '17', 255: '18', 270: '19',
+          285: '20', 300: '21', 315: '22', 330: '23', 345: '24', 360: '25'}
 
 
 class BriefFlight:
@@ -54,10 +61,10 @@ class BriefFlight:
         return BriefFlight(flight_id=flight_id, **dict(zip(FIELDS, data)))
 
     @staticmethod
-    def create_from_search(id: str, detail: dict, **_):
+    def create_from_search(flight_id: str, detail: dict, **_):
         """Static method for Flight instance creation from search results."""
-        return BriefFlight(flight_id=id, lat=detail['lat'], lon=detail['lon'],
-                           origin=detail['schd_from'],
+        return BriefFlight(flight_id=flight_id, lat=detail['lat'],
+                           lon=detail['lon'], origin=detail['schd_from'],
                            destination=detail['schd_to'],
                            model=detail['ac_type'], registration=detail['reg'],
                            icao=detail['callsign'], iata=detail['flight'],
@@ -91,16 +98,18 @@ class DetailedFlight:
     @staticmethod
     def create(data: dict):
         """Static method for Flight instance creation."""
-        return DetailedFlight(flight_id=data['identification']['id'],
-                              flight=data['identification']['callsign'],
-                              status=data['status']['text'],
-                              model=data['aircraft']['model']['code'] if
-                              data['aircraft']['model']['code'] else None,
-                              registration=data['aircraft']['registration'],
-                              airline=data['airline']['name'],
-                              origin=data['airport']['origin']['name'],
-                              destination=data['airport']['destination']['name'],
-                              trail=data['trail'])
+        return DetailedFlight(
+            flight_id=data['identification']['id'],
+            flight=data['identification']['callsign'],
+            status=data['status']['text'],
+            model=data['aircraft']['model']['code'] if
+            data['aircraft']['model']['code'] else None,
+            registration=data['aircraft']['registration'],
+            airline=data['airline']['name'],
+            origin=data['airport']['origin']['name'],
+            destination=data['airport']['destination']['name'],
+            trail=data['trail']
+        )
 
     def __str__(self) -> str:
         return 'Flight {} from {} to {}, {} ({}).'.format(self.flight,
@@ -108,3 +117,16 @@ class DetailedFlight:
                                                           self.destination,
                                                           self.model,
                                                           self.registration)
+
+
+def flights_to_json(flights: List[BriefFlight]):
+    data = []
+    for flight in flights:
+        data.append({'id': flight.id, 'lat': flight.lat, 'lon': flight.lon,
+                     'track': flight.track, 'speed': flight.speed,
+                     'pic': get_image_id(flight.track)})
+    return json.dumps(data)
+
+
+def get_image_id(track: int) -> int:
+    return TRACKS[min(TRACKS, key=lambda x: abs(x - track))]
