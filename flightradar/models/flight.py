@@ -120,11 +120,12 @@ class DetailedFlight:
 
 
 def flights_to_json(flights: List[BriefFlight]):
-    data = []
+    data = {}
     for flight in flights:
-        data.append({'id': flight.id, 'lat': flight.lat, 'lon': flight.lon,
-                     'track': flight.track, 'speed': flight.speed,
-                     'pic': get_image_id(flight.track)})
+        data[flight.id] = {'id': flight.id, 'lat': flight.lat,
+                           'lon': flight.lon,
+                           'track': flight.track, 'speed': flight.speed,
+                           'pic': get_image_id(flight.track)}
     return json.dumps(data)
 
 

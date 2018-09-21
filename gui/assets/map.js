@@ -7,6 +7,14 @@ class Aircraft {
         this.speed = speed;
         this.track = track;
     }
+
+    move(newPoint) {
+        this.marker.setPosition(newPoint);
+    }
+
+    hide() {
+        this.marker.setMap(null);
+    }
 }
 
 window.onload = function() {
@@ -32,19 +40,33 @@ function initMap() {
 }
 
 function addAircrafts(data) {
-    removeAircrafts();
-
     let newAircrafts = JSON.parse(data);
-    newAircrafts.forEach(function(aircraft) {
-        aircrafts[aircraft['id']] = new Aircraft(
-            new google.maps.Marker({
-                position: {lat: aircraft['lat'], lng: aircraft['lon']},
-                map: map,
-                icon: 'icons/' + aircraft['pic'] + '.png'
-            }),
-            aircraft['speed'],
-            aircraft['track']
-        );
+    Object.keys(aircrafts).forEach(function(aircraftId, index) {
+        if (aircraftId in newAircrafts) {
+            let newPoint = {
+                lat: newAircrafts[aircraftId]['lat'],
+                lng: newAircrafts[aircraftId]['lon']
+            };
+            aircrafts[aircraftId].move(newPoint);
+        }
+        else {
+            removeAircraft(aircraftId);
+        }
+    });
+
+    Object.keys(newAircrafts).forEach(function(aircraftId, index) {
+        if (!(aircraftId in aircrafts)) {
+            let aircraft = newAircrafts[aircraftId];
+            aircrafts[aircraftId] = new Aircraft(
+                new google.maps.Marker({
+                    position: {lat: aircraft['lat'], lng: aircraft['lon']},
+                    map: map,
+                    icon: 'icons/' + aircraft['pic'] + '.png'
+                }),
+                aircraft['speed'],
+                aircraft['track']
+            );
+        }
     });
 }
 
@@ -55,15 +77,13 @@ function moveAircrafts() {
             aircrafts[key].speed * 0.514444,
             aircrafts[key].track
         );
-        aircrafts[key].marker.setPosition(newPoint);
+        aircrafts[key].move(newPoint);
     });
 }
 
-function removeAircrafts() {
-    Object.keys(aircrafts).forEach(function(key, index) {
-        aircrafts[key].marker.setMap(null);
-        delete aircrafts[key];
-    });
+function removeAircraft(id) {
+    aircrafts[id].hide();
+    delete aircrafts[id];
 }
 
 function getBounds() {

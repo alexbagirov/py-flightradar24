@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77ec464e-22ff-47b3-baf2-74fc4faa950d" name="Default" comment="" />
+    <list default="true" id="77ec464e-22ff-47b3-baf2-74fc4faa950d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/py-flightradar24.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/py-flightradar24.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flightradar/models/flight.py" beforeDir="false" afterPath="$PROJECT_DIR$/flightradar/models/flight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/assets/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/gui/assets/map.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -10,7 +15,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/py_flightradar24$pytest_for_test_api_TestApi.coverage" NAME="pytest for test_api.TestApi Coverage Results" MODIFIED="1536660824073" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/py_flightradar24$main.coverage" NAME="main Coverage Results" MODIFIED="1537471362124" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/py_flightradar24$main.coverage" NAME="main Coverage Results" MODIFIED="1537504990568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/py_flightradar24$api.coverage" NAME="api Coverage Results" MODIFIED="1536944199223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flightradar" />
     <SUITE FILE_PATH="coverage/py_flightradar24$gui.coverage" NAME="gui Coverage Results" MODIFIED="1537165544184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gui" />
   </component>
@@ -23,6 +28,7 @@
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.28" value="3" />
           <entry key="project.open.time.29" value="2" />
+          <entry key="project.open.time.30" value="1" />
           <entry key="project.open.time.31" value="3" />
           <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.34" value="1" />
@@ -30,46 +36,77 @@
           <entry key="project.open.time.36" value="3" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.66" value="1" />
-          <entry key="project.opened" value="20" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="32" />
           <entry key="html" value="182" />
-          <entry key="js" value="1508" />
-          <entry key="py" value="9373" />
+          <entry key="js" value="2099" />
+          <entry key="py" value="9396" />
           <entry key="txt" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="182" />
-          <entry key="JavaScript" value="1508" />
+          <entry key="JavaScript" value="2099" />
           <entry key="PLAIN_TEXT" value="38" />
-          <entry key="Python" value="9373" />
+          <entry key="Python" value="9396" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="7" />
-          <entry key="js" value="13" />
-          <entry key="py" value="52" />
+          <entry key="js" value="15" />
+          <entry key="py" value="54" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="7" />
-          <entry key="JavaScript" value="13" />
+          <entry key="JavaScript" value="15" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="52" />
+          <entry key="Python" value="54" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gui/assets/map.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="177">
+              <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flightradar/api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-345">
+              <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/flightradar/models/flight.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="123" column="26" lean-forward="true" selection-start-line="123" selection-start-column="26" selection-end-line="123" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -108,13 +145,13 @@
         <option value="$PROJECT_DIR$/gui/__init__.py" />
         <option value="$PROJECT_DIR$/flightradar/coordinates.py" />
         <option value="$PROJECT_DIR$/main.py" />
-        <option value="$PROJECT_DIR$/flightradar/models/flight.py" />
         <option value="$PROJECT_DIR$/flightradar/api.py" />
         <option value="$PROJECT_DIR$/flightradar/tests/test_api.py" />
         <option value="$PROJECT_DIR$/gui/map.py" />
         <option value="$PROJECT_DIR$/gui/assets/map.html" />
-        <option value="$PROJECT_DIR$/gui/assets/map.js" />
         <option value="$PROJECT_DIR$/gui/main.py" />
+        <option value="$PROJECT_DIR$/flightradar/models/flight.py" />
+        <option value="$PROJECT_DIR$/gui/assets/map.js" />
       </list>
     </option>
   </component>
@@ -124,7 +161,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="288" />
     <option name="y" value="35" />
     <option name="width" value="1390" />
@@ -138,7 +175,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -146,10 +182,33 @@
               <item name="py-flightradar24" type="b2602c69:ProjectViewProjectNode" />
               <item name="py-flightradar24" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="py-flightradar24" type="b2602c69:ProjectViewProjectNode" />
+              <item name="py-flightradar24" type="462c0819:PsiDirectoryNode" />
+              <item name="flightradar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="py-flightradar24" type="b2602c69:ProjectViewProjectNode" />
+              <item name="py-flightradar24" type="462c0819:PsiDirectoryNode" />
+              <item name="flightradar" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="py-flightradar24" type="b2602c69:ProjectViewProjectNode" />
+              <item name="py-flightradar24" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="py-flightradar24" type="b2602c69:ProjectViewProjectNode" />
+              <item name="py-flightradar24" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -157,6 +216,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../google.js" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -319,14 +379,15 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="27" width="1307" height="741" extended-state="6" />
+    <frame x="59" y="35" width="1861" height="1045" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22839017" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23183583" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32781458" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3129139" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3117914" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39909297" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -397,13 +458,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flightradar/models/flight.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-636">
-          <caret line="70" column="54" lean-forward="true" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flightradar/models/operator.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -415,16 +469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/flightradar/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-258">
-          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -456,13 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gui/assets/map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/assets/map.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -474,6 +511,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1036">
           <caret line="68" lean-forward="true" selection-start-line="68" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flightradar/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-345">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flightradar/models/flight.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="123" column="26" lean-forward="true" selection-start-line="123" selection-start-column="26" selection-end-line="123" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/assets/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="48" column="28" lean-forward="true" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
         </state>
       </provider>
     </entry>
