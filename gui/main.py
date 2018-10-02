@@ -43,7 +43,7 @@ class MainWindow(QWidget):
         self.row.addWidget(self.details, 1)
         self.setLayout(self.row)
 
-    def closeEvent(self, event):
+    def closeEvent(self, _):
         self.manager.stop_moves_thread()
 
     def set_info(self, flight: DetailedFlight):
@@ -79,7 +79,7 @@ class MainWindow(QWidget):
         self.details.widgets['logo'].setPixmap(pixmap)
 
 
-def run():
+if __name__ == '__main__':
     app = QApplication(sys.argv)
     window = MainWindow()
     window.show()

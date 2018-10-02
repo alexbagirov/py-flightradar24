@@ -6,6 +6,10 @@ One more Python project I'd like to make as a student.
 ### Description
 This is a autonomous PC client for FR24 service.
 
+### Build & Run
+Open the project directory and run `build.sh` file.
+You will find the binary file in the `dist` folder then.
+
 ### API
 This program gets all necessary information from FR24 api endpoint. After that all aircrafts are being painted as 
 points and move based on direction and speed info. When needed, the information would be updated in order to refresh 
