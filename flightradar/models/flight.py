@@ -3,7 +3,6 @@ from typing import List
 
 from flightradar.coordinates import Waypoint
 
-
 FIELDS = ['mode_s', 'lat', 'lon', 'track', 'alt', 'speed',
           'squawk', 'radar', 'model', 'registration', 'undefined',
           'origin', 'destination', 'iata', 'undefined2',
@@ -71,23 +70,25 @@ class BriefFlight:
                            airline=detail['operator'])
 
 
-class DetailedFlight:
+class DetailedFlight(object):
     """Class for storing info of selected flight.
     Must be displayed separately."""
     def __init__(self, flight_id, flight, status, model, registration, airline,
-                 origin, destination, trail):
+                 origin, destination, trail, iata, icao):
         self.id = flight_id
         self.flight = flight
         self.status = status
         self.model = model
         self.registration = registration
         self.airline = airline
+        self.icao = icao
+        self.iata = iata
         self.origin = origin
         self.destination = destination
         self.trail = self.collect_trail(trail)
 
     @staticmethod
-    def collect_trail(waypoints: list) -> list:
+    def collect_trail(waypoints: list) -> List[Waypoint]:
         """Converts JSON list of points into list of Waypoint instances."""
         return [Waypoint(point['lat'],
                          point['lng'],
@@ -103,11 +104,18 @@ class DetailedFlight:
             flight=data['identification']['callsign'],
             status=data['status']['text'],
             model=data['aircraft']['model']['code'] if
-            data['aircraft']['model']['code'] else None,
+            data['aircraft']['model']['code'] else 'N/A',
             registration=data['aircraft']['registration'],
-            airline=data['airline']['name'],
-            origin=data['airport']['origin']['name'],
-            destination=data['airport']['destination']['name'],
+            airline=data['airline']['name'] if data['airline'] else 'N/A',
+            iata=data['airline']['code']['iata']
+            if data['airline'] else 'N/A',
+            icao=data['airline']['code']['icao']
+            if data['airline'] else 'N/A',
+            origin=data['airport']['origin']['position']['region']['city']
+            if data['airport']['origin'] else 'N/A',
+            destination=data['airport']['destination']['position']
+            ['region']['city'] if data['airport']['destination']
+            else 'N/A',
             trail=data['trail']
         )
 

@@ -66,6 +66,9 @@ function addAircrafts(data) {
                 aircraft['speed'],
                 aircraft['track']
             );
+            aircrafts[aircraftId].marker.addListener('click', function() {
+                window.loader.handleClick(aircraftId);
+            });
         }
     });
 }
