@@ -6,6 +6,13 @@ One more Python project I'd like to make as a student.
 ### Description
 This is a autonomous PC client for FR24 service.
 
+### Run
+```bash
+pip3 install -r requirements.txt
+cd gui
+python3 main.py
+```
+
 ### Build & Run
 Open the project directory and run `build.sh` file.
 You will find the binary file in the `dist` folder then.
