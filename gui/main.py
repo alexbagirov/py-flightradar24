@@ -78,8 +78,11 @@ class MainWindow(QWidget):
         try:
             data = urlopen(LOGO_URL.format(iata, icao)).read()
         except HTTPError:
-            data = urlopen(Request(ALT_LOGO_URL.format(icao),
-                                   headers=HEADERS)).read()
+            try:
+                data = urlopen(Request(ALT_LOGO_URL.format(icao),
+                                       headers=HEADERS)).read()
+            except HTTPError:
+                pass
         image = QImage()
         image.loadFromData(data)
         pixmap = QPixmap(image)

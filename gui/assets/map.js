@@ -6,6 +6,9 @@ class Aircraft {
         this.marker = marker;
         this.speed = speed;
         this.track = track;
+
+        this.oldLat = marker.lat;
+        this.oldLng = marker.lng;
     }
 
     move(newPoint) {
@@ -43,11 +46,30 @@ function addAircrafts(data) {
     let newAircrafts = JSON.parse(data);
     Object.keys(aircrafts).forEach(function(aircraftId, index) {
         if (aircraftId in newAircrafts) {
-            let newPoint = {
-                lat: newAircrafts[aircraftId]['lat'],
-                lng: newAircrafts[aircraftId]['lon']
-            };
-            aircrafts[aircraftId].move(newPoint);
+            var newAircraft = newAircrafts[aircraftId];
+            var newPoint = new google.maps.LatLng(newAircraft['lat'],
+                                                  newAircraft['lon']);
+
+            aircrafts[aircraftId].oldLat = aircrafts[aircraftId].marker.getPosition().lat();
+            aircrafts[aircraftId].oldLng = aircrafts[aircraftId].marker.getPosition().lng();
+
+            aircrafts[aircraftId].track = newAircraft['track'];
+            aircrafts[aircraftId].speed = newAircraft['speed'];
+            aircrafts[aircraftId].marker.setIcon('icons/' + newAircraft['pic'] + '.png');
+
+            var currentPosition = aircrafts[aircraftId].marker.getPosition();
+            var distanceToPrevious = calcDistance(newPoint,
+                new google.maps.LatLng(aircrafts[aircraftId].oldLat,
+                    aircrafts[aircraftId].oldLng));
+            var distanceToCurrent = calcDistance(currentPosition, newPoint);
+            var speedDelta = distanceToCurrent / aircrafts[aircraftId].speed;
+
+            if (distanceToCurrent < distanceToPrevious) {
+                aircrafts[aircraftId].speed += speedDelta;
+            }
+            else {
+                aircrafts[aircraftId].speed -= speedDelta;
+            }
         }
         else {
             removeAircraft(aircraftId);
@@ -91,6 +113,10 @@ function removeAircraft(id) {
 
 function getBounds() {
     return map.getBounds();
+}
+
+function calcDistance(p1, p2) {
+    return google.maps.geometry.spherical.computeDistanceBetween(p1, p2);
 }
 
 function moveMap(lat, lon) {
