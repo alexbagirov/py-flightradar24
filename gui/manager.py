@@ -37,6 +37,6 @@ class AircraftManager(QObject):
         self.active = False
 
     @pyqtSlot(str, name='handleClick')
-    def handle_click(self, flight_id: int):
+    def show_flight_details(self, flight_id: int):
         threading.Thread(target=self.app.set_info,
                          args=(self.app.api.get_flight(flight_id),)).start()

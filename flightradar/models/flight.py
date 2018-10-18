@@ -60,11 +60,12 @@ class BriefFlight:
         return BriefFlight(flight_id=flight_id, **dict(zip(FIELDS, data)))
 
     @staticmethod
-    def create_from_search(flight_id: str, detail: dict, **_):
+    def create_from_search(detail: dict, **kwargs):
         """Static method for Flight instance creation from search results."""
-        return BriefFlight(flight_id=flight_id, lat=detail['lat'],
-                           lon=detail['lon'], origin=detail['schd_from'],
-                           destination=detail['schd_to'],
+        return BriefFlight(flight_id=kwargs['res_id'], lat=detail['lat'],
+                           lon=detail['lon'],
+                           origin=detail['route'],
+                           destination=detail['route'],
                            model=detail['ac_type'], registration=detail['reg'],
                            icao=detail['callsign'], iata=detail['flight'],
                            airline=detail['operator'])

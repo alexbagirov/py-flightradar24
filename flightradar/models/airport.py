@@ -14,6 +14,7 @@ class Airport:
                                      lat=self.lat, lon=self.lon)
 
     @staticmethod
-    def create_from_search(label: str, detail: dict, **_):
+    def create_from_search(detail: dict, **kwargs):
         """Static method for Airport instance creation from search results."""
-        return Airport(label, detail['lat'], detail['lon'], detail['size'])
+        return Airport(kwargs['res_label'], detail['lat'], detail['lon'],
+                       detail['size'])

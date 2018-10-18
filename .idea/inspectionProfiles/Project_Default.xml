@@ -32,6 +32,7 @@
         <list>
           <option value="flightradar.api.coordinates" />
           <option value="flightradar.api.*" />
+          <option value="PyQt5.QtWidgets.clicked.*" />
         </list>
       </option>
     </inspection_tool>

@@ -1,11 +1,11 @@
 import os
 
 from PyQt5.QtCore import QUrl
-from PyQt5.QtWidgets import QWidget
 from PyQt5.QtWebEngineWidgets import QWebEngineView, QWebEnginePage
+from PyQt5.QtWidgets import QWidget
 
-from flightradar.coordinates import Area, Point
 from flightradar.api import API
+from flightradar.coordinates import Area, Point
 
 
 class Map(QWebEngineView, QWidget):
@@ -29,10 +29,13 @@ class Map(QWebEngineView, QWidget):
         self.add_aircrafts(aircrafts)
 
     def add_aircrafts(self, data: str) -> None:
-        self.page().runJavaScript("addAircrafts('{}')".format(data))
+        self.page().runJavaScript("addAircrafts('{}');".format(data))
 
     def move_aircrafts(self):
-        self.page().runJavaScript("moveAircrafts()")
+        self.page().runJavaScript("moveAircrafts();")
+
+    def focus_on_point(self, lat: float, lon: float):
+        self.page().runJavaScript("moveMap({}, {});".format(lat, lon))
 
 
 class MapPage(QWebEnginePage):

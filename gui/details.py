@@ -1,13 +1,14 @@
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QLabel, QGroupBox,
                              QGridLayout)
-from PyQt5.QtGui import QFont
+
+from gui.font import NORMAL_FONT, SMALL_FONT
 
 
 class DetailsPanel(QWidget):
-    def __init__(self, main_window):
-        QWidget.__init__(self, parent=main_window)
-        self.column = QVBoxLayout()
+    def __init__(self, parent):
+        QWidget.__init__(self, parent=parent)
+        _column = QVBoxLayout()
         self.widgets = {key: QLabel() for key in ('logo', 'airline', 'flight',
                                                   'route', 'registration',
                                                   'altitude', 'track', 'speed',
@@ -15,15 +16,15 @@ class DetailsPanel(QWidget):
                                                   'longitude')}
 
         for widget in self.widgets:
-            self.widgets[widget].setFont(QFont("Manjari", 16))
+            self.widgets[widget].setFont(NORMAL_FONT)
 
-        self.column.addWidget(self.widgets['logo'], 1, Qt.AlignCenter)
+        _column.addWidget(self.widgets['logo'], 1, Qt.AlignCenter)
         self.widgets['route_group'] = QGroupBox('Route')
         self.widgets['aircraft_group'] = QGroupBox('Aircraft')
-        self.widgets['route_group'].setFont(QFont("Manjari", 12))
-        self.widgets['aircraft_group'].setFont(QFont("Manjari", 12))
-        self.column.addWidget(self.widgets['route_group'], 1)
-        self.column.addWidget(self.widgets['aircraft_group'], 2)
+        self.widgets['route_group'].setFont(SMALL_FONT)
+        self.widgets['aircraft_group'].setFont(SMALL_FONT)
+        _column.addWidget(self.widgets['route_group'], 1)
+        _column.addWidget(self.widgets['aircraft_group'], 2)
 
         route_grid = QGridLayout()
         route_grid.addWidget(self.widgets['airline'], 0, 0, Qt.AlignCenter)
@@ -40,4 +41,4 @@ class DetailsPanel(QWidget):
         aircraft_grid.addWidget(self.widgets['longitude'], 4, 1)
         self.widgets['aircraft_group'].setLayout(aircraft_grid)
 
-        self.setLayout(self.column)
+        self.setLayout(_column)

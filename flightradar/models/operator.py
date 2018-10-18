@@ -10,6 +10,7 @@ class Operator:
         return self.label
 
     @staticmethod
-    def create_from_search(label: str, detail: dict, name: str, **_):
+    def create_from_search(detail: dict, **kwargs):
         """Static method for Operator instance creation from search results."""
-        return Operator(label, detail['iata'], detail['logo'], name)
+        return Operator(kwargs['res_label'], detail['iata'], detail['logo'],
+                        kwargs['res_name'])

@@ -92,3 +92,8 @@ function removeAircraft(id) {
 function getBounds() {
     return map.getBounds();
 }
+
+function moveMap(lat, lon) {
+    let center = new google.maps.LatLng(lat, lon);
+    map.panTo(center);
+}

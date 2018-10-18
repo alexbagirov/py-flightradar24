@@ -1,20 +1,18 @@
-import os
 import sys
-from urllib.request import urlopen, HTTPError, Request
 from threading import Lock
+from urllib.request import urlopen, HTTPError, Request
 
+from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWebChannel import QWebChannel
 from PyQt5.QtWidgets import (QWidget, QHBoxLayout, QApplication)
-from PyQt5.QtGui import QImage, QPixmap
 
-sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                             os.path.pardir))
-from gui.map import Map
+from flightradar.api import API, HEADERS
+from flightradar.models.flight import DetailedFlight, BriefFlight
+from flightradar.models.airport import Airport
 from gui.details import DetailsPanel
 from gui.manager import AircraftManager
-from flightradar.api import API, HEADERS
-from flightradar.models.flight import DetailedFlight
-
+from gui.map import Map
+from gui.search import SearchPanel
 
 LOGO_URL = ('https://s3.eu-central-1.amazonaws.com/images.flightradar24.com'
             '/assets/airlines/logotypes/{}_{}.png')
@@ -31,17 +29,21 @@ class MainWindow(QWidget):
         self.api = API()
         self.map = Map(self)
         self.details = DetailsPanel(self)
+        self.search = SearchPanel(self)
 
         self.channel = QWebChannel()
         self.manager = AircraftManager(self)
         self.channel.registerObject('aircraftManager', self.manager)
         self.map.page().setWebChannel(self.channel)
 
-        self.row = QHBoxLayout()
-        self.row.setContentsMargins(0, 0, 0, 0)
-        self.row.addWidget(self.map, 2)
-        self.row.addWidget(self.details, 1)
-        self.setLayout(self.row)
+        _row = QHBoxLayout()
+        _row.setContentsMargins(0, 0, 0, 0)
+        _row.addWidget(self.map, 2)
+        _row.addWidget(self.details, 1)
+        _row.addWidget(self.search, 1)
+        self.setLayout(_row)
+
+        self.logos = {}
 
     def closeEvent(self, _):
         self.manager.stop_moves_thread()
@@ -68,6 +70,11 @@ class MainWindow(QWidget):
             self.load_airline_logo(flight.iata, flight.icao)
 
     def load_airline_logo(self, iata: str, icao: str):
+        logo = (iata, icao)
+
+        if logo in self.logos:
+            self.details.widgets['logo'].setPixmap(self.logos[logo])
+
         try:
             data = urlopen(LOGO_URL.format(iata, icao)).read()
         except HTTPError:
@@ -76,7 +83,14 @@ class MainWindow(QWidget):
         image = QImage()
         image.loadFromData(data)
         pixmap = QPixmap(image)
+
+        self.logos[logo] = pixmap
         self.details.widgets['logo'].setPixmap(pixmap)
+
+    def open_search_result(self, result: (BriefFlight, Airport)):
+        self.map.focus_on_point(result.lat, result.lon)
+        if hasattr(result, 'id'):
+            self.manager.show_flight_details(result.id)
 
 
 if __name__ == '__main__':

@@ -69,7 +69,13 @@ class API:
         return json.loads(urlopen(req).read().decode())['results']
 
     def search(self, query: str, limit: int = 10):
-        return (SEARCH_TYPES[result['type']].create_from_search(**result)
+        return ((SEARCH_TYPES[result['type']].create_from_search(
+            res_id=result['id'] if 'id' in result else None,
+            res_name=result['name'] if 'name' in result else None,
+            res_label=result['label'] if 'label' in result else
+            None,
+            **result), result['type'])
                 for result in self.get_search_results(query, limit)
                 if result['type'] != 'schedule'
-                and result['type'] != 'aircraft')
+                and result['type'] != 'aircraft'
+                and result['type'] != 'operator')
