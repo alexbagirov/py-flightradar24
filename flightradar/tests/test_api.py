@@ -1,12 +1,12 @@
 import os
+import json
 import sys
-from time import sleep
 import unittest
 
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              os.path.pardir))
 
-from api import API, Area, BriefFlight, DetailedFlight
+from api import API, Area
 from coordinates import Point
 
 
@@ -15,14 +15,9 @@ class TestApi(unittest.TestCase):
         self.api = API()
 
     def test_area_flights_loading(self):
-        for flight in self.api.get_area(Area(Point(57.06, 55.00),
-                                             Point(32.97, 36.46))):
-            self.assertIsInstance(flight, BriefFlight)
+        area = Area(Point(57.06, 55.00), Point(32.97, 36.46))
+        data = self.api.get_area(area)
 
-    def test_get_flight(self):
-        flights = [flight for flight in
-                   self.api.get_area(Area(Point(57.06, 55.00),
-                                          Point(32.97, 36.46)))]
-        sleep(4)
-        self.assertIsInstance(self.api.get_flight(flights[0].id),
-                              DetailedFlight)
+        self.assertIsInstance(data, str)
+        d = json.loads(data)
+        self.assertIsInstance(d, dict)

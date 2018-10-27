@@ -35,3 +35,12 @@ class Waypoint:
 
     def __str__(self) -> str:
         return '{} {}'.format(self.latitude, self.longitude)
+
+    def __eq__(self, other):
+        if self.latitude != other.latitude \
+                or self.longitude != other.longitude \
+                or self.altitude != other.altitude \
+                or self.speed != other.speed \
+                or self.heading != other.heading:
+            return False
+        return True
