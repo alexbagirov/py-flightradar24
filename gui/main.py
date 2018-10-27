@@ -17,6 +17,7 @@ from gui.details import DetailsPanel
 from gui.manager import AircraftManager
 from gui.map import Map
 from gui.search import SearchPanel
+from gui.argparser import AP
 
 LOGO_URL = ('https://s3.eu-central-1.amazonaws.com/images.flightradar24.com'
             '/assets/airlines/logotypes/{}_{}.png')
@@ -25,7 +26,7 @@ ALT_LOGO_URL = ('https://www.flightradar24.com/'
 
 
 class MainWindow(QWidget):
-    def __init__(self):
+    def __init__(self, initial_position):
         QWidget.__init__(self, parent=None)
         self.setWindowTitle('flightradar24')
         self.resize(1400, 800)
@@ -36,7 +37,7 @@ class MainWindow(QWidget):
         self.search = SearchPanel(self)
 
         self.channel = QWebChannel()
-        self.manager = AircraftManager(self)
+        self.manager = AircraftManager(self, initial_position)
         self.channel.registerObject('aircraftManager', self.manager)
         self.map.page().setWebChannel(self.channel)
 
@@ -53,7 +54,8 @@ class MainWindow(QWidget):
         self.manager.stop_moves_thread()
 
     def set_info(self, flight: DetailedFlight):
-        with Lock():
+        lock = Lock()
+        with lock:
             self.details.widgets['airline'].setText(flight.airline)
             self.details.widgets['flight'].setText(flight.flight)
             self.details.widgets['route'].setText(
@@ -101,7 +103,9 @@ class MainWindow(QWidget):
 
 
 if __name__ == '__main__':
+    parser = AP()
+    coordinates = parser.parse()
     app = QApplication(sys.argv)
-    window = MainWindow()
+    window = MainWindow(coordinates if coordinates else None)
     window.show()
     sys.exit(app.exec_())

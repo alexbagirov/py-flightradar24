@@ -6,12 +6,13 @@ from PyQt5.QtWidgets import QWidget
 
 
 class AircraftManager(QObject):
-    def __init__(self, program: QWidget):
+    def __init__(self, program: QWidget, initial_position):
         super().__init__()
         self.app = program
         self.active = False
         self.moving_thread = threading.Thread(target=self.move_aircrafts)
         self.fetching_thread = threading.Thread(target=self.fetch_new_data)
+        self.initial_position = initial_position
 
     @pyqtSlot(name='paintAircrafts')
     def paint_aircrafts(self):
@@ -32,6 +33,9 @@ class AircraftManager(QObject):
         self.active = True
         self.moving_thread.start()
         self.fetching_thread.start()
+        if self.initial_position:
+            self.app.map.page().runJavaScript(
+                "moveMap({}, {});".format(*self.initial_position))
 
     def stop_moves_thread(self):
         self.active = False
