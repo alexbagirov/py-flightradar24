@@ -23,8 +23,8 @@ class Map(QWebEngineView, QWidget):
         self.page().runJavaScript("getBounds()", self.update_map)
 
     def update_map(self, data: dict):
-        area = Area(Point(data['f']['f'], data['f']['b']),
-                    Point(data['b']['b'], data['b']['f']))
+        area = Area(Point(data['l']['l'], data['l']['j']),
+                    Point(data['j']['j'], data['j']['l']))
         aircrafts = self.api.get_area(area)
         self.add_aircrafts(aircrafts)
 

@@ -1,3 +1,4 @@
+import os
 import sys
 from threading import Lock
 from urllib.request import urlopen, HTTPError, Request
@@ -5,6 +6,9 @@ from urllib.request import urlopen, HTTPError, Request
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWebChannel import QWebChannel
 from PyQt5.QtWidgets import (QWidget, QHBoxLayout, QApplication)
+
+sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             os.path.pardir))
 
 from flightradar.api import API, HEADERS
 from flightradar.models.flight import DetailedFlight, BriefFlight
