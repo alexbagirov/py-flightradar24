@@ -71,7 +71,7 @@ class BriefFlight:
                            airline=detail['operator'])
 
 
-class DetailedFlight(object):
+class DetailedFlight:
     """Class for storing info of selected flight.
     Must be displayed separately."""
     def __init__(self, flight_id, flight, status, model, registration, airline,
@@ -121,11 +121,12 @@ class DetailedFlight(object):
         )
 
     def __str__(self) -> str:
-        return 'Flight {} from {} to {}, {} ({}).'.format(self.flight,
-                                                          self.origin,
-                                                          self.destination,
-                                                          self.model,
-                                                          self.registration)
+        return 'Flight {} from {} to {}, {} ({}).'.format(
+            self.flight,
+            self.origin,
+            self.destination,
+            self.model,
+            self.registration)
 
 
 def flights_to_json(flights: List[BriefFlight]):

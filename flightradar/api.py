@@ -48,10 +48,9 @@ class API:
     @staticmethod
     def parse_flights(data: dict):
         """Finds all flights in the response and builds their instances."""
-        result = []
-        for key in data:
-            if type(data[key]) == list:
-                result.append(BriefFlight.create(key, data[key]))
+        result = [BriefFlight.create(key, data[key])
+                  for key in data if isinstance(data[key], list)]
+
         return result
 
     def get_flight(self, flight_id: str) -> DetailedFlight:
@@ -70,12 +69,9 @@ class API:
 
     def search(self, query: str, limit: int = 10):
         return ((SEARCH_TYPES[result['type']].create_from_search(
-            res_id=result['id'] if 'id' in result else None,
-            res_name=result['name'] if 'name' in result else None,
-            res_label=result['label'] if 'label' in result else
-            None,
+            res_id=result.get('id'),
+            res_name=result.get('name'),
+            res_label=result.get('label'),
             **result), result['type'])
                 for result in self.get_search_results(query, limit)
-                if result['type'] != 'schedule'
-                and result['type'] != 'aircraft'
-                and result['type'] != 'operator')
+                if result['type'] not in ('schedule', 'aircraft', 'operator'))

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="77ec464e-22ff-47b3-baf2-74fc4faa950d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/flightradar/tests/test_models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flightradar/tests/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/flightradar/tests/test_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flightradar/api.py" beforeDir="false" afterPath="$PROJECT_DIR$/flightradar/api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flightradar/models/flight.py" beforeDir="false" afterPath="$PROJECT_DIR$/flightradar/models/flight.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +14,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/py_flightradar24$pytest_for_test_api_TestApi.coverage" NAME="pytest for test_api.TestApi Coverage Results" MODIFIED="1540623109154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flightradar/tests" />
     <SUITE FILE_PATH="coverage/py_flightradar24$main.coverage" NAME="main Coverage Results" MODIFIED="1539970203816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gui" />
-    <SUITE FILE_PATH="coverage/py_flightradar24$pytest_in_test_models_py.coverage" NAME="pytest in test_models.py Coverage Results" MODIFIED="1540623117257" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flightradar/tests" />
+    <SUITE FILE_PATH="coverage/py_flightradar24$pytest_in_test_models_py.coverage" NAME="pytest in test_models.py Coverage Results" MODIFIED="1540623201916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flightradar/tests" />
     <SUITE FILE_PATH="coverage/py_flightradar24$api.coverage" NAME="api Coverage Results" MODIFIED="1536944199223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/flightradar" />
     <SUITE FILE_PATH="coverage/py_flightradar24$gui.coverage" NAME="gui Coverage Results" MODIFIED="1538502480593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gui" />
   </component>
@@ -48,7 +48,7 @@
           <entry key="html" value="182" />
           <entry key="js" value="4038" />
           <entry key="md" value="134" />
-          <entry key="py" value="17737" />
+          <entry key="py" value="17829" />
           <entry key="sh" value="26" />
           <entry key="txt" value="23" />
         </counts>
@@ -60,7 +60,7 @@
           <entry key="JavaScript" value="4038" />
           <entry key="Markdown" value="134" />
           <entry key="PLAIN_TEXT" value="55" />
-          <entry key="Python" value="17737" />
+          <entry key="Python" value="17829" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -69,7 +69,7 @@
           <entry key="html" value="8" />
           <entry key="js" value="20" />
           <entry key="md" value="1" />
-          <entry key="py" value="151" />
+          <entry key="py" value="154" />
           <entry key="sh" value="1" />
           <entry key="txt" value="7" />
         </counts>
@@ -80,45 +80,18 @@
           <entry key="JavaScript" value="20" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="151" />
+          <entry key="Python" value="154" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flightradar/api.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="68" column="66" selection-start-line="68" selection-start-column="66" selection-end-line="68" selection-end-column="66" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/flightradar/tests/test_api.py">
+        <entry file="file://$PROJECT_DIR$/flightradar/models/flight.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/flightradar/tests/test_models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2894">
-              <caret line="208" column="52" selection-start-line="208" selection-start-column="52" selection-end-line="208" selection-end-column="52" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1488">
+              <caret line="138" column="27" lean-forward="true" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -157,7 +130,6 @@
         <option value="$PROJECT_DIR$/flightradar/flights.py" />
         <option value="$PROJECT_DIR$/tests/test_api.py" />
         <option value="$PROJECT_DIR$/gui/__init__.py" />
-        <option value="$PROJECT_DIR$/flightradar/coordinates.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/gui/assets/map.html" />
         <option value="$PROJECT_DIR$/flightradar/jsonp.py" />
@@ -169,14 +141,15 @@
         <option value="$PROJECT_DIR$/flightradar/models/operator.py" />
         <option value="$PROJECT_DIR$/gui/manager.py" />
         <option value="$PROJECT_DIR$/gui/map.py" />
-        <option value="$PROJECT_DIR$/flightradar/models/flight.py" />
-        <option value="$PROJECT_DIR$/flightradar/api.py" />
         <option value="$PROJECT_DIR$/gui/details.py" />
         <option value="$PROJECT_DIR$/gui/search.py" />
         <option value="$PROJECT_DIR$/gui/assets/map.js" />
         <option value="$PROJECT_DIR$/gui/main.py" />
         <option value="$PROJECT_DIR$/flightradar/tests/test_models.py" />
         <option value="$PROJECT_DIR$/flightradar/tests/test_api.py" />
+        <option value="$PROJECT_DIR$/flightradar/coordinates.py" />
+        <option value="$PROJECT_DIR$/flightradar/api.py" />
+        <option value="$PROJECT_DIR$/flightradar/models/flight.py" />
       </list>
     </option>
   </component>
@@ -276,7 +249,7 @@
               <item name="py-flightradar24" type="b2602c69:ProjectViewProjectNode" />
               <item name="py-flightradar24" type="462c0819:PsiDirectoryNode" />
               <item name="flightradar" type="462c0819:PsiDirectoryNode" />
-              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -309,7 +282,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.pytest in test_models.py">
+  <component name="RunManager" selected="Python.main">
     <configuration name="build.sh" type="BashConfigurationType" factoryName="Bash" temporary="true">
       <module name="py-flightradar24" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -403,15 +376,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 00m 10s.xml">
-      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 00m 25s.xml">
-      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
-    </history-entry>
-    <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 01m 30s.xml">
-      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
-    </history-entry>
     <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 01m 52s.xml">
       <configuration name="pytest for test_api.TestApi" configurationId="tests" />
     </history-entry>
@@ -433,6 +397,15 @@
     <history-entry file="pytest_for_test_api_TestApi - 2018.09.11 at 15h 13m 44s.xml">
       <configuration name="pytest for test_api.TestApi" configurationId="tests" />
     </history-entry>
+    <history-entry file="pytest_for_test_api_TestApi - 2018.10.27 at 11h 51m 49s.xml">
+      <configuration name="pytest for test_api.TestApi" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_models_py - 2018.10.27 at 11h 51m 57s.xml">
+      <configuration name="pytest in test_models.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_test_models_py - 2018.10.27 at 11h 53m 22s.xml">
+      <configuration name="pytest in test_models.py" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -445,13 +418,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="27" width="1307" height="741" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49917626" visible="true" weight="0.17605075" />
       <window_info id="Structure" order="1" sideWeight="0.50082374" side_tool="true" weight="0.23183583" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32539684" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49881047" weight="0.30960265" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49881047" weight="0.6423841" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39569536" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -509,13 +483,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/flightradar/jsonp.py" />
-    <entry file="file://$PROJECT_DIR$/flightradar/coordinates.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -581,13 +548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flightradar/models/flight.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gui/font.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -633,19 +593,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/flightradar/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="68" column="66" selection-start-line="68" selection-start-column="66" selection-end-line="68" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/flightradar/tests/test_models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2894">
+        <state relative-caret-position="1004">
           <caret line="208" column="52" selection-start-line="208" selection-start-column="52" selection-end-line="208" selection-end-column="52" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
@@ -660,6 +610,30 @@
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flightradar/coordinates.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flightradar/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="66" column="38" lean-forward="true" selection-start-line="66" selection-start-column="38" selection-end-line="66" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/flightradar/models/flight.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1488">
+          <caret line="138" column="27" lean-forward="true" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
         </state>
       </provider>
     </entry>

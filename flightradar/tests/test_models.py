@@ -29,10 +29,10 @@ class TestModels(unittest.TestCase):
         self.assertEquals(flight.destination, 'CGO')
         self.assertEquals(flight.iata, 'I49821')
 
-        self.assertEquals(flight.__str__(), 'Flight RSY9821 from VKO to CGO. '
-                                            'A332 (EI-FSE) at 56.4135, '
-                                            '58.7894 on altitude 34975. '
-                                            'Speed: 506. Track: 84.')
+        self.assertEquals(str(flight), 'Flight RSY9821 from VKO to CGO. '
+                                       'A332 (EI-FSE) at 56.4135, '
+                                       '58.7894 on altitude 34975. '
+                                       'Speed: 506. Track: 84.')
 
         self.assertEquals(flights_to_json([flight]),
                           '{"123": {"id": "123", "lat": 56.4135, '
@@ -176,7 +176,7 @@ class TestModels(unittest.TestCase):
                  Waypoint(56.38216, 58.218185, 39000, 531, 84)]
 
         self.assertEquals(flight.trail, trail)
-        self.assertEquals(flight.__str__(),
+        self.assertEquals(str(flight),
                           'Flight DLH718 from Munich to Seoul, A359 (D-AIXK).')
 
     def test_aircraft_image_by_track(self):
@@ -197,7 +197,7 @@ class TestModels(unittest.TestCase):
         self.assertEquals(airport.label, 'Yekaterinburg Koltsovo Airport '
                                          '(SVX / USSS)')
 
-        self.assertEquals(airport.__str__(),
+        self.assertEquals(str(airport),
                           'Yekaterinburg Koltsovo Airport (SVX / USSS) '
                           'located at 56.743099, 60.802719.')
 
@@ -213,4 +213,4 @@ class TestModels(unittest.TestCase):
         self.assertEquals(operator.name, 'Aeroflot - Russian Airlines')
         self.assertEquals(operator.label, 'Aeroflot')
 
-        self.assertEquals(operator.__str__(), 'Aeroflot')
+        self.assertEquals(str(operator), 'Aeroflot')
