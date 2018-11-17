@@ -11,6 +11,7 @@ from flightradar.coordinates import Area, Point
 class Map(QWebEngineView, QWidget):
     def __init__(self, parent):
         super().__init__(parent)
+        self.app = parent
         self.map_page = MapPage()
         self.setPage(self.map_page)
         html_path = os.path.abspath(os.path.join(os.path.dirname(__file__),
@@ -26,7 +27,7 @@ class Map(QWebEngineView, QWidget):
         area = Area(Point(data['l']['l'], data['l']['j']),
                     Point(data['j']['j'], data['j']['l']))
         aircrafts = self.api.get_area(area)
-        self.add_aircrafts(aircrafts)
+        self.app.manager.add_aircrafts(aircrafts)
 
     def add_aircrafts(self, data: str) -> None:
         self.page().runJavaScript("addAircrafts('{}');".format(data))

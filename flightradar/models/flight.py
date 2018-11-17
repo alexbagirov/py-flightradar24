@@ -109,9 +109,9 @@ class DetailedFlight:
             registration=data['aircraft']['registration'],
             airline=data['airline']['name'] if data['airline'] else 'N/A',
             iata=data['airline']['code']['iata']
-            if data['airline'] else 'N/A',
+            if 'airline' in data and 'code' in data['airline'] else 'N/A',
             icao=data['airline']['code']['icao']
-            if data['airline'] else 'N/A',
+            if 'airline' in data and 'code' in data['airline'] else 'N/A',
             origin=data['airport']['origin']['position']['region']['city']
             if data['airport']['origin'] else 'N/A',
             destination=data['airport']['destination']['position']

@@ -11,5 +11,5 @@ class AP:
                                  default=None)
 
     def parse(self):
-        args = self.parser.parse_args()
+        args, unknown = self.parser.parse_known_args()
         return (args.lat, args.lon) if args.lat and args.lon else None
